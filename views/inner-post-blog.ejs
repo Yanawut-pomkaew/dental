@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="icon" type="image/x-icon" href="title-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <title>Dental</title>
+
+    <style>
+        body {
+            font-family: 'Sriracha', cursive;
+        }
+        .menu {
+            color : white;
+        }
+        .menu:hover {
+            color : rgb(192, 190, 190);
+            transition : 2s;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            
+
+        }
+
+        .form {
+            padding : 100px;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        .confirm {
+            background-color : rgb(111, 180, 111);
+            border : none;
+        }
+
+    </style>
+</head>
+<body style="padding:0 ; margin:0; ">
+
+    <div class="container-fluid p-3 " style="background-color : rgb(55, 55, 147) ; color : white ;">
+        <div class="container " style="margin-left : 4%;">
+            <span>
+                <div class="font-weight-bold" >
+                    <img src="title-image.png" style="width:30px; height : 30px; margin-top:-2%;cursor :pointer" onclick="location.href = '/'">
+                    <span style="font-size : 30px;cursor :pointer"  onclick="location.href = '/'">Dental</span> <span style="font-size : 20px;">&nbsp;&nbsp;เพราะสุขภาพปากคือสุขภาพคุณ</span> 
+                    <span>&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                    <span style="margin-left : 22% ;cursor : pointer">
+                        <span class="menu" style="font-size : 20px;margin-right : 25px;"><a href="/booking" class="menu">ตั้งโพสต์</a></span>
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="/blog" class="menu">อัพเดตทันตแพทย์</a></span>
+
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="/dentist" class="menu">ตารางนัด</a></span>
+                        
+                    </span>
+                
+                </div>
+
+            </span>
+        </div>
+       
+    </div>
+
+ 
+    <div style="margin-top:40px; margin-bottom : 120px;">
+        <h1 style="position : absolute;left : 50%;transform : translateX(-50%); color :rgb(55, 55, 147);">ตารางนัด</h1>
+    </div>
+
+    <table class="table-queues">
+        <tr>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+            <th>เบอร์</th>
+            <th>เมล</th>
+            <th>วันที่นัด</th>
+            <th>เวลาที่นัด</th>
+            <th>ต้องการ</th>
+            <th>รายละเอียด</th>
+            <th>ยืนยัน</th>
+        </tr>
+    <% data.forEach(function(x) { %> 
+        
+        <tr>
+            <td><%= x.name %></td>
+            <td><%= x.surname %></td>
+            <td><%= x.phone %></td>
+            <td><%= x.mail %></td>
+            <td><%= x.day %></td>
+            <td><%= x.time %></td>
+            <td><%= x.option %></td>
+            <td><%= x.des %></td>
+            <td><button class="confirm" onclick="location.href='./dental-inner/<%= x.id %>'">ยืนยัน</button></td>
+        
+            
+        </tr>
+        
+    <% }); %>
+    </table>
+
+
+    
+    <div style="margin-top:100px; margin-bottom : 120px;">
+        <h1 style="position : absolute;left : 50%;transform : translateX(-50%); color :rgb(55, 55, 147);">ตั้งโพสต์</h1>
+    </div>
+    <br><br><br>
+
+    
+    <form name="form1" action="/loading1" method="POST" onsubmit="return insertPost()">
+        <div class="form-group" style=" width: 95%; margin-left : auto;margin-right : auto; margin-bottom : 40px;">
+            <label for="InputBlog">ชื่อโพสต์</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="nameBlog" id=" nameBlog"type="text" class="form-control" placeholder="ชื่อของโพสต์">
+        </div>
+
+
+        <div class="form-group" style=" width: 95%; margin-left : auto;margin-right : auto; margin-bottom : 40px;">
+            <label for="InputBlogDes">รายละเอียดของโพสต์</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="nameBlogDes" id=" nameBlogDes"type="text" class="form-control" >
+        </div>
+
+        <div class="form-group" style=" width: 95%; margin-left : auto;margin-right : auto; margin-bottom : 40px;">
+            <label for="InputBlogDes">Thambnail</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องใส่)</span>
+            <input name="nameBlogDes" id=" nameBlogDes"type="file" class="form-control" accept="image/png, image/jpeg , image/jpg">
+        </div>
+        
+        <button type="submit" class="btn" style="background-color :rgb(55, 55, 147);color :white ;position : absolute ; left : 50% ; transform: translateX(-50%);">ยืนยันการโพสต์</button>
+    </form>
+    
+    <div style="margin-top:200px; margin-bottom : 100px;">
+        <h1 style="position : absolute;left : 50%;transform : translateX(-50%); color :rgb(55, 55, 147);">ทันตแพทย์คนใหม่</h1>
+    </div>
+    <br><br><br>
+
+
+    <form name="form2" action="/loading2" method="POST" onsubmit="return insertDentist()">
+        <div class="form-group" style=" width: 95%; margin-left : auto;margin-right : auto; margin-bottom : 40px;">
+            <label for="InputDentist">ชื่อทันตแพทย์</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="nameDentist" id=" nameDentist"type="text" class="form-control" placeholder="ชื่อของทันตแพทย์">
+        </div>
+
+
+        <div class="form-group" style=" width: 95%; margin-left : auto;margin-right : auto; margin-bottom : 40px;">
+            <label for="InputDentistDe">แผนกของทันตแพทย์</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="nameDentistDe" id=" nameDentistDe"type="text" class="form-control" >
+        </div>
+
+        <div class="form-group" style=" width: 95%; margin-left : auto;margin-right : auto; margin-bottom : 40px;">
+            <label for="InputImage">รูปทันตแพทย์</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องใส่)</span>
+            <input name="nameImage" id=" nameImage" type="file" class="form-control" accept="image/png, image/jpeg ,image/jpg">
+        </div>
+        
+        <button type="submit" class="btn" style="background-color :rgb(55, 55, 147);color :white ;position : absolute ; left : 50% ; transform: translateX(-50%);">ยืนยัน</button>
+    </form>
+    <br><br><br><br><br>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+    <script>
+        
+        function insertPost() {
+            let nameBlog = document.forms["form1"]["nameBlog"].value;
+            let nameBlogDes = document.forms["form1"]["nameBlogDes"].value;
+        
+     
+            if(nameBlog.trim() === '' || nameBlog.trim() == null || nameBlogDes.trim() === '' || nameBlogDes.trim() == null) {
+                alert('กรอกข้อมูลก่อนกดยืนยัน');
+                return false;
+            }
+        }
+
+        function insertDentist() {
+            let nameDentist = document.forms["form2"]["nameDentist"].value;
+            let nameDentistDe = document.forms["form2"]["nameDentistDe"].value;
+
+            if(nameDentist.trim() === '' || nameDentist.trim() == null || nameDentistDe.trim() === '' || nameDentistDe.trim() == null) {
+                alert('กรอกข้อมูลก่อนกดยืนยัน');
+                return false;
+            }
+        }
+
+    </script>
+
+</html>

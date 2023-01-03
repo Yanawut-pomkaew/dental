@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="icon" type="image/x-icon" href="title-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <title>Dental</title>
+
+    <style>
+        body {
+            font-family: 'Sriracha', cursive;
+        }
+        .menu {
+            color : white;
+        }
+        .menu:hover {
+            color : rgb(192, 190, 190);
+            transition : 2s;
+            text-decoration: none;
+        }
+
+        .form {
+            padding : 100px;
+        }
+
+        .title {
+            color :rgb(55, 55, 147);
+            margin-top: 40px;
+            position : relative;
+        }
+
+        .popup{
+            background-color :rgb(55, 55, 147);
+            border-radius : 6px;
+            width : fit-content;
+            padding:20px;
+            position : absolute;
+            visibility: hidden;
+            top:100%;
+            left:50%;
+            transform : translate(-50% , -50%) scale(0.001);
+            transition : 2s;
+        }
+
+        
+        .popup-show {
+            visibility: visible;
+            transform : translate(-50% , -50%) ;
+            
+        }
+
+
+      
+
+    </style>
+</head>
+<body>
+    
+    <div class="container-fluid p-3 " style="background-color : rgb(55, 55, 147) ; color : white ;">
+        <div class="container " style="margin-left : 4%;">
+            <span>
+                <div class="font-weight-bold" >
+                    <img src="title-image.png" style="width:30px; height : 30px; margin-top:-2%;cursor :pointer" onclick="location.href = '/'">
+                    <span style="font-size : 30px;cursor :pointer"  onclick="location.href = '/'">Dental</span> <span style="font-size : 20px;">&nbsp;&nbsp;เพราะสุขภาพปากคือสุขภาพคุณ</span> 
+                    <span>&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                    <span style="margin-left : 15% ;cursor : pointer">
+                        <span class="menu" style="font-size : 20px;margin-right : 25px;"><a href="/booking" class="menu">จองคิว</a></span>
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="/blog" class="menu">สาระของฟัน</a></span>
+
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="/dentist" class="menu">ทันตแพทย์</a></span>
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="" class="menu">ติดต่อเรา</a></span>
+                    </span>
+                
+                </div>
+
+            </span>
+        </div>
+        
+       
+    </div>
+
+    <div class="title">
+        <h1 style="position : absolute;left : 50%;transform : translateX(-50%);">จองคิวแพทย์</h1>
+    </div>
+
+    <div class="form">
+
+    <form name="form" action="/booking" method="POST" onsubmit="return validationForm()">
+        <div class="form-group" style=" position: relative;">
+            <label for="InputName">ชื่อ</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="name" id=" name"type="text" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="ชื่อจริง">
+        </div>
+
+        <div class="form-group" style=" position: relative;">
+            <label for="InputSurname">นามสกุล</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="surname" type="text" class="form-control" id="InputSurname" aria-describedby="SurnameHelp" placeholder="นามสกุล">
+        </div>
+
+        <div class="form-group" style=" position: relative;">
+            <label for="InputPhone">เบอร์โทร</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="phone" type="text" class="form-control" id="InputPhone" aria-describedby="PhoneHelp" placeholder="0xxxxxxxxxx" pattern="[0]{1}[0-9]{9}">
+        </div>
+
+        <div class="form-group" style=" position: relative;">
+            <label for="Email">Email address</label>
+            <input name="mail" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="yourEmail@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.com$">
+            <small id="emailHelp" class="form-text text-muted">เราจะไม่เปิดเผยอีเมลของคุณ</small>
+          </div>
+
+        <div class="form-group" style=" position: relative;">
+            <label for="day">วันที่ต้องการนัดหมาย</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+            <input name="day" type="date" class="form-control" id="InputDay" aria-describedby="DayHelp" >
+        </div>
+
+    <div class="form-group" style=" position: relative;">
+        <label for="time">เวลาที่ต้องการนัดหมาย</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+        <select class="form-control" id="timeChoice" name="time">
+            <option value="กรุณาเลือก">กรุณาเลือกเวลา</option>
+            <option value="09.00 น.">09.00 น.</option>
+            <option value="10.00 น.">10.00 น.</option>
+            <option value="11.00 น.">11.00 น.</option>
+            <option value="12.00 น.">12.00 น.</option>
+            <option value="13.00 น.">13.00 น.</option>
+            <option value="14.00 น.">14.00 น.</option>
+            <option value="15.00 น.">15.00 น.</option>
+            <option value="16.00 น.">16.00 น.</option>
+            <option value="17.00 น.">17.00 น.</option>
+            <option value="18.00 น.">18.00 น.</option>
+            <option value="19.00 น.">19.00 น.</option>
+            <option value="20.00 น.">20.00 น.</option>
+        </select>
+    </div>
+
+    <div class="form-group" style=" position: relative;">
+        <label for="services">การบริการที่ต้องการ</label><span style="font-size:12px;color : red">&nbsp; &nbsp;(จำเป็นต้องกรอก)</span>
+        <select class="form-control" id="serviceChoice" name="option">
+            <option value="กรุณาเลือก">กรุณาเลือก</option>
+            <option>จัดฟัน</option>
+            <option>ตรวจสุขภาพฟัน</option>
+            <option>ศัลยกรรมช่องปาก</option>
+            <option>ใส่รากฟันเทียม</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ps">เรื่องที่อยากจะปรึกษา</label>
+        <textarea name="ps" class="form-control" id="ps" rows="3"></textarea>
+      </div>
+    
+    <small style="color : red">**ทางเราจะดำเนินการติดต่อผ่านทางเบอร์โทรศัพท์ของท่านอีกครั้ง สำหรับการนัดหมาย</small>    
+    <button type="submit" class="btn" style="background-color :rgb(55, 55, 147);color :white ;position : absolute ; left : 50% ; transform: translateX(-50%);margin-top : 5%">ยืนยันการจองคิว</button>
+    </form>
+    </div>
+
+    <div class="container-fluid p-3 " style="text-align : center;margin-top:150px;background-color : rgb(55, 55, 147) ; color : white ;">
+
+        <span >© 2022 Dental. All Rights Reserved</span>
+        <br><br>
+        <span >Central World  ชั้น 99</span>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ 
+</body>
+
+    <script>
+
+        function validationForm() {
+            let name = document.forms["form"]["name"].value;
+            let surname = document.forms["form"]["surname"].value;
+            let phone = document.forms["form"]["phone"].value;
+            if(name.trim() === "" || name == null || surname.trim() === "" || surname==null || phone.trim() === '' || phone == null) {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return false;
+            }
+
+            let popup = document.getElementById('popup');
+            popup.classList.add('popup-show');
+        }
+    </script>
+</html>

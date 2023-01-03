@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="icon" type="image/x-icon" href="title-image.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <title>Dental</title>
+
+    <style>
+        body {
+            font-family: 'Sriracha', cursive;
+        }
+        .menu {
+            color : white;
+        }
+        .menu:hover {
+            color : rgb(192, 190, 190);
+            transition : 2s;
+            text-decoration: none;
+        }
+        .blog {
+            
+            display : grid;
+            margin-left : 50px;
+            height: fit-content;
+            
+            display: inline-grid;
+            width: 350px;
+            
+            margin-top : 50px;
+            padding:10px;
+            border:2px solid rgba(0, 0, 0, 0.434);
+            border-radius: 8px;
+            justify-self: center;
+            align-self: center;
+            
+            
+        }
+
+        .title {
+            padding-left : 10px;
+            padding-bottom : 10px;
+        }
+
+        .title:hover {
+            color :rgb(55, 55, 147);
+            cursor : pointer;
+        }
+
+        .imageBlog {
+            width: 346px;
+            height: 200px;
+            object-fit: fill;
+            padding:0;
+            margin-left : -10px;
+            margin-top:-10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            margin-bottom:30px;
+            cursor : pointer;
+        }
+
+        .allBlog {
+            background-color :rgba(55, 55, 147, 0.646);
+            border : none;
+            cursor : pointer;
+            border-radius:4px;
+            margin-top:50px;
+            padding:15px 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color : white;
+        }
+
+        .allBlog:focus {
+            outline: none;
+            border : none;
+        }
+
+        
+    </style>
+</head>
+<body style="padding:0 ; margin:0; ">
+
+    <div class="container-fluid p-3 " style="background-color : rgb(55, 55, 147) ; color : white ;">
+        <div class="container " style="margin-left : 4%;">
+            <span>
+                <div class="font-weight-bold" >
+                    <img src="title-image.png" style="width:30px; height : 30px; margin-top:-2%;cursor :pointer" onclick="location.href = '/'">
+                    <span style="font-size : 30px;cursor :pointer"  onclick="location.href = '/'">Dental</span> <span style="font-size : 20px;">&nbsp;&nbsp;เพราะสุขภาพปากคือสุขภาพคุณ</span> 
+                    <span>&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    
+                    <span style="margin-left : 15% ;cursor : pointer">
+                        <span class="menu" style="font-size : 20px;margin-right : 25px;"><a href="/booking" class="menu">จองคิว</a></span>
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="/blog" class="menu">สาระของฟัน</a></span>
+
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="/dentist" class="menu">ทันตแพทย์</a></span>
+                        <span class="menu" style="font-size : 20px; margin-right : 25px;"><a href="" class="menu">ติดต่อเรา</a></span>
+                    </span>
+                
+                </div>
+
+            </span>
+        </div>
+        
+       
+    </div>
+
+    <div class="banner">
+        <div class="swiper" >
+            <div class="swiper-wrapper" style="cursor : pointer">
+              <div class="swiper-slide"><img src="Map.jpg" class="img-fluid" style="width:100%"></div>
+              <div class="swiper-slide"><img src="banner2.png" class="img-fluid" style="width:100%"></div>
+              
+            
+            </div>
+            <div class="swiper-pagination" style="color : white"></div>
+            <div class="swiper-button-prev" style="color : white"></div>
+            <div class="swiper-button-next" style="color : white"></div>
+          </div>
+    </div>
+
+    <div class="container-fluid p-3" style="text-align : center; margin-top : 50px;">
+        <h3>Dental พร้อมให้บริการด้วยทันตแพทย์เฉพาะทาง ทุกสาขาใกล้บ้านคุณ</h3>
+        <br><br>
+
+        <div style="display : flex; flex-wrap : wrap; justify-content: center; flex-basis : 30%">
+            <div style="margin-left : 40px; margin-right : 40px ; margin-top : -20px;" >
+                <img src="จัดฟัน.png" alt="จัดฟัน"><h4 style="margin-top:-10px;">จัดฟัน</h4>
+            </div>
+            <div style="margin-left : 30px; margin-right : 40px">
+            <img src="ตรวจสุขภาพฟัน.png" alt="ตรวจสุขภาพฟัน"><h4>ตรวจสุขภาพฟัน</h4>
+            </div>
+            <div style="margin-left : 40px; margin-right : 40px ; margin-top : 40px;" >
+                <img src="allIcon.png" style="width:140px; height:140px;" alt="ใส่รากฟันเทียม"><h4 style="margin-top : 45px;">ใส่รากฟันเทียม</h4>
+            </div>
+            <div style="margin-left : 40px; margin-right : 40px ; margin-top : 40px;" >
+                <img src="oral-surgery.png" style="width:155px; height:155px;" alt="ศัลยกรรมช่องปาก"><h4 style="margin-top : 30px;">ศัลยกรรมช่องปาก</h4>
+            </div>
+
+   
+        </div>
+
+    </div>
+
+    <div class="container-fluid p-3 " style="margin-top:80px;text-align : center; position: relative;background-color : rgb(55, 55, 147) ; color : white ; height: 120px;">
+
+        <span class="font-weight-bold" style="font-size : 30px;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">สาระของฟัน</span>
+    </div>
+
+   
+    <div style="display : flex; flex-wrap : wrap; justify-content: center; flex-basis : 30%">
+
+       
+        <% data.forEach(function(x) { %> 
+            <div class="blog " >
+                <img class="imageBlog" src='<%= x.image %>' style="cursor : pointer"/>
+                <h5 class="title"><%= x.title %></h5>
+                <p style="color :rgb(55, 55, 147) ; padding-bottom:30px;padding-left : 10px ; cursor:pointer">อ่านต่อ →</p>
+            </div>
+        <% }); %>
+       
+    </div>
+    
+
+    <div class="container-fluid p-3 " style="text-align : center; position: relative;">
+        <button class = "allBlog" onclick="location.href = '/blog'">อ่านทั้งหมด</button>
+    </div>
+
+    <div class="container-fluid p-3 " style="text-align : center;margin-top:150px;background-color : rgb(55, 55, 147) ; color : white ;">
+
+        <span >© 2022 Dental. All Rights Reserved</span>
+        <br><br>
+        <span >Central World  ชั้น 99</span>
+        
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable : true,
+                
+            },
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,  
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    
+</html>
